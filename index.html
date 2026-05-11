@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to Google Maps...</title>
+    <title>Review & Feedback</title>
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -12,9 +12,26 @@
             background-color: #ffffff; 
             color: #333; 
         }
+        
+        /* Shivam Branding Style */
+        .branding {
+            font-size: 32px;
+            font-weight: bold;
+            color: #4285F4; /* Google Blue */
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .sub-text { 
+            font-size: 16px; 
+            color: #5f6368; 
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
         .loader { 
             border: 5px solid #f3f3f3; 
-            border-top: 5px solid #4285F4; 
+            border-top: 5px solid #34a853; /* Google Green */
             border-radius: 50%; 
             width: 50px; 
             height: 50px; 
@@ -27,52 +44,53 @@
             width: 100%; 
             max-width: 300px; 
             height: 250px; 
-            background: #f9f9f9; 
-            border: 2px dashed #ccc; 
-            margin: 30px auto; 
+            background: #f8f9fa; 
+            border: 2px dashed #dadce0; 
+            margin: 20px auto; 
             display: flex; 
             align-items: center; 
             justify-content: center;
-            overflow: hidden;
+            border-radius: 8px;
         }
         
-        .timer-text { font-size: 20px; margin-bottom: 10px; }
-        .timer-num { font-size: 32px; font-weight: bold; color: #4285F4; }
+        .timer-text { font-size: 18px; color: #3c4043; }
+        .timer-num { font-size: 32px; font-weight: bold; color: #ea4335; } /* Google Red */
         
         .btn { 
             display: inline-block; 
-            padding: 15px 30px; 
-            background: #4285F4; 
+            padding: 15px 35px; 
+            background: #34a853; 
             color: white; 
             text-decoration: none; 
             border-radius: 30px; 
             font-weight: bold; 
             margin-top: 20px;
-            transition: 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .btn:hover { background: #357ae8; }
     </style>
 </head>
 <body>
 
-    <h2>Connecting to Review Page</h2>
+    <div class="branding">Created by Shivam</div>
+    <div class="sub-text">Digital Marketing & Tech Solutions</div>
+
+    <h2>Redirecting to Review Page</h2>
     <div class="timer-text">Please wait <span id="countdown" class="timer-num">10</span> seconds...</div>
     
     <div class="loader"></div>
 
-    <!-- AD PLACEMENT -->
     <div class="ad-container" id="ad-slot">
-        <!-- Paste your Ad Code (AdSense/Adsterra) below -->
-        <p style="color: #888;">[ Your Advertisement Here ]</p>
+        <p style="color: #70757a;">[ Advertisement ]</p>
     </div>
 
-    <p>If the page doesn't redirect, click the button below:</p>
-    <a href="https://share.google/JZiHxOuVnBw3qpZLT" id="redirectBtn" class="btn">Write a Review Now</a>
+    <p>If you are not redirected automatically, click below:</p>
+    <a href="https://www.google.com/search?q=advance+dental+%26+maxillofacial+trauma+centre:+by+dr+ashish+kumar+muzaffarpur+reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcaCl00MVRkkoM65GARCUrS-fh-DvJyvVyOgMHZNrv-zCtt739wYIwfzjqg9DRPEl9hBEdn_JG1Y-mV8MlcH1XuF-5JnIaO121Z55WdU03wQBDKDJ-pFEbFBffojDHB6qk9cNienrLBNllahblXEoI7nmAbNR-Bxi-zCTHHH0_KLCHb7kA%3D%3D" id="redirectBtn" class="btn">Write a Review</a>
 
     <script>
-        const targetURL = "https://share.google/JZiHxOuVnBw3qpZLT";
-        let timeLeft = 10;
+        // Updated Map Review Link
+        const targetURL = "https://www.google.com/search?q=advance+dental+%26+maxillofacial+trauma+centre:+by+dr+ashish+kumar+muzaffarpur+reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcaCl00MVRkkoM65GARCUrS-fh-DvJyvVyOgMHZNrv-zCtt739wYIwfzjqg9DRPEl9hBEdn_JG1Y-mV8MlcH1XuF-5JnIaO121Z55WdU03wQBDKDJ-pFEbFBffojDHB6qk9cNienrLBNllahblXEoI7nmAbNR-Bxi-zCTHHH0_KLCHb7kA%3D%3D";
         
+        let timeLeft = 10;
         const timerElement = document.getElementById("countdown");
 
         const countdownInterval = setInterval(() => {
@@ -81,10 +99,10 @@
             
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
-                // First attempt to redirect
+                // Redirecting to the review page
                 window.location.replace(targetURL);
                 
-                // Fallback if replace doesn't trigger on some mobile browsers
+                // Backup redirect
                 setTimeout(() => {
                     window.location.href = targetURL;
                 }, 500);
