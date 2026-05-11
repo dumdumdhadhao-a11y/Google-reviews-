@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Google Maps...</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-align: center; 
+            padding: 40px 20px; 
+            background-color: #ffffff; 
+            color: #333; 
+        }
+        .loader { 
+            border: 5px solid #f3f3f3; 
+            border-top: 5px solid #4285F4; 
+            border-radius: 50%; 
+            width: 50px; 
+            height: 50px; 
+            animation: spin 1s linear infinite; 
+            margin: 20px auto; 
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .ad-container { 
+            width: 100%; 
+            max-width: 300px; 
+            height: 250px; 
+            background: #f9f9f9; 
+            border: 2px dashed #ccc; 
+            margin: 30px auto; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .timer-text { font-size: 20px; margin-bottom: 10px; }
+        .timer-num { font-size: 32px; font-weight: bold; color: #4285F4; }
+        
+        .btn { 
+            display: inline-block; 
+            padding: 15px 30px; 
+            background: #4285F4; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #357ae8; }
+    </style>
+</head>
+<body>
+
+    <h2>Connecting to Review Page</h2>
+    <div class="timer-text">Please wait <span id="countdown" class="timer-num">10</span> seconds...</div>
+    
+    <div class="loader"></div>
+
+    <!-- AD PLACEMENT -->
+    <div class="ad-container" id="ad-slot">
+        <!-- Paste your Ad Code (AdSense/Adsterra) below -->
+        <p style="color: #888;">[ Your Advertisement Here ]</p>
+    </div>
+
+    <p>If the page doesn't redirect, click the button below:</p>
+    <a href="https://share.google/JZiHxOuVnBw3qpZLT" id="redirectBtn" class="btn">Write a Review Now</a>
+
+    <script>
+        const targetURL = "https://share.google/JZiHxOuVnBw3qpZLT";
+        let timeLeft = 10;
+        
+        const timerElement = document.getElementById("countdown");
+
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                // First attempt to redirect
+                window.location.replace(targetURL);
+                
+                // Fallback if replace doesn't trigger on some mobile browsers
+                setTimeout(() => {
+                    window.location.href = targetURL;
+                }, 500);
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
