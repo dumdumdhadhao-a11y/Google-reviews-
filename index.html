@@ -4,69 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review & Feedback</title>
+    <script src="https://alwingulla.com/88/pfe/current/tag.min.js?z=10992219" data-cfasync="false" async></script>
     <style>
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            text-align: center; 
-            padding: 40px 20px; 
-            background-color: #ffffff; 
-            color: #333; 
-        }
-        
-        /* Shivam Branding Style */
-        .branding {
-            font-size: 32px;
-            font-weight: bold;
-            color: #4285F4; /* Google Blue */
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .sub-text { 
-            font-size: 16px; 
-            color: #5f6368; 
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-
-        .loader { 
-            border: 5px solid #f3f3f3; 
-            border-top: 5px solid #34a853; /* Google Green */
-            border-radius: 50%; 
-            width: 50px; 
-            height: 50px; 
-            animation: spin 1s linear infinite; 
-            margin: 20px auto; 
-        }
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 40px 20px; background-color: #ffffff; color: #333; }
+        .branding { font-size: 32px; font-weight: bold; color: #4285F4; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .sub-text { font-size: 16px; color: #5f6368; margin-bottom: 30px; font-weight: 500; }
+        .loader { border: 5px solid #f3f3f3; border-top: 5px solid #34a853; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 20px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        .ad-container { 
-            width: 100%; 
-            max-width: 300px; 
-            height: 250px; 
-            background: #f8f9fa; 
-            border: 2px dashed #dadce0; 
-            margin: 20px auto; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            border-radius: 8px;
-        }
-        
-        .timer-text { font-size: 18px; color: #3c4043; }
-        .timer-num { font-size: 32px; font-weight: bold; color: #ea4335; } /* Google Red */
-        
-        .btn { 
-            display: inline-block; 
-            padding: 15px 35px; 
-            background: #34a853; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 30px; 
-            font-weight: bold; 
-            margin-top: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+        .ad-container { width: 100%; max-width: 300px; min-height: 250px; background: #f8f9fa; border: 2px dashed #dadce0; margin: 20px auto; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .timer-num { font-size: 32px; font-weight: bold; color: #ea4335; }
+        .btn { display: inline-block; padding: 15px 35px; background: #34a853; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; margin-top: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -75,19 +22,19 @@
     <div class="sub-text">Digital Marketing & Tech Solutions</div>
 
     <h2>Redirecting to Review Page</h2>
-    <div class="timer-text">Please wait <span id="countdown" class="timer-num">10</span> seconds...</div>
+    <p style="font-size: 18px;">Please wait <span id="countdown" class="timer-num">10</span> seconds...</p>
     
     <div class="loader"></div>
 
     <div class="ad-container" id="ad-slot">
-        <p style="color: #70757a;">[ Advertisement ]</p>
+        <p style="color: #70757a;">[ Ad Loading... ]</p>
     </div>
 
-    <p>If you are not redirected automatically, click below:</p>
-    <a href="https://www.google.com/search?q=advance+dental+%26+maxillofacial+trauma+centre:+by+dr+ashish+kumar+muzaffarpur+reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcaCl00MVRkkoM65GARCUrS-fh-DvJyvVyOgMHZNrv-zCtt739wYIwfzjqg9DRPEl9hBEdn_JG1Y-mV8MlcH1XuF-5JnIaO121Z55WdU03wQBDKDJ-pFEbFBffojDHB6qk9cNienrLBNllahblXEoI7nmAbNR-Bxi-zCTHHH0_KLCHb7kA%3D%3D" id="redirectBtn" class="btn">Write a Review</a>
+    <p>If you are not redirected, click below:</p>
+    <a href="https://www.google.com/search?q=advance+dental+%26+maxillofacial+trauma+centre:+by+dr+ashish+kumar+muzaffarpur+reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcaCl00MVRkkoM65GARCUrS-fh-DvJyvVyOgMHZNrv-zCtt739wYIwfzjqg9DRPEl9hBEdn_JG1Y-mV8MlcH1XuF-5JnIaO121Z55WdU03wQBDKDJ-pFEbFBffojDHB6qk9cNienrLBNllahblXEoI7nmAbNR-Bxi-zCTHHH0_KLCHb7kA%3D%3D" class="btn">Write a Review</a>
 
     <script>
-        // Updated Map Review Link
+        // Redirect Logic
         const targetURL = "https://www.google.com/search?q=advance+dental+%26+maxillofacial+trauma+centre:+by+dr+ashish+kumar+muzaffarpur+reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcaCl00MVRkkoM65GARCUrS-fh-DvJyvVyOgMHZNrv-zCtt739wYIwfzjqg9DRPEl9hBEdn_JG1Y-mV8MlcH1XuF-5JnIaO121Z55WdU03wQBDKDJ-pFEbFBffojDHB6qk9cNienrLBNllahblXEoI7nmAbNR-Bxi-zCTHHH0_KLCHb7kA%3D%3D";
         
         let timeLeft = 10;
@@ -99,13 +46,7 @@
             
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
-                // Redirecting to the review page
                 window.location.replace(targetURL);
-                
-                // Backup redirect
-                setTimeout(() => {
-                    window.location.href = targetURL;
-                }, 500);
             }
         }, 1000);
     </script>
